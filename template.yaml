@@ -152,7 +152,7 @@ Resources:
           GroupName: !Ref CodeBuildLogGroup
       Source:
         Type: CODEPIPELINE
-        BuildSpec: "buildspec.yml"
+        BuildSpec: "buildspec.yaml"
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
         Image: "aws/codebuild/amazonlinux-x86_64-standard:5.0" # Includes SAM, AWS, JAVA 11 environments
