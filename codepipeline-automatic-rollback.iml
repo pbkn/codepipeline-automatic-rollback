@@ -27,7 +27,10 @@
                 <map />
               </option>
               <option name="tempParameterOverrides">
-                <map />
+                <map>
+                  <entry key="ArtifactBucketName" value="codepipeline-artifacts-s3-bucket-pbkn-poc" />
+                  <entry key="StackName" value="SAM-AutomaticRollback-CodePipeline-Stack" />
+                </map>
               </option>
             </SyncSamConfig>
           </value>
