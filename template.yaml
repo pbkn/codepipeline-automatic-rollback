@@ -22,6 +22,7 @@ Resources:
   CodePipeline:
     Type: AWS::CodePipeline::Pipeline
     Properties:
+      PipelineType: V2
       ArtifactStore:
         Type: S3
         Location: !Ref ArtifactBucketName
@@ -45,6 +46,8 @@ Resources:
               RunOrder: 1
 
         - Name: Build
+          OnFailure:
+            Result: ROLLBACK
           Actions:
             - Name: CodeBuild
               ActionTypeId:
@@ -62,6 +65,8 @@ Resources:
               RunOrder: 1
 
         - Name: Deploy
+          OnFailure:
+            Result: ROLLBACK
           Actions:
             - Name: CreateChangeSet
               ActionTypeId:
